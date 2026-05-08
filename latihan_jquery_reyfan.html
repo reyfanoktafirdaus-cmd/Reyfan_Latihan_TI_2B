@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan JQuery Reyfan</title>
 
     <!-- JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <Style>
-        body {
+    <style>
+        body{
             font-family: Arial, sans-serif;
+            background: #f4f4f4;
             text-align: center;
-            padding: 20px;
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 30px;
         }
 
-        h1 {
-            color: #d13030;
+        h1{
+            color: #333;
         }
 
         .box{
-            width: 250px;
+            width: 450px;
             height: 120px;
             background: cornflowerblue;
             color: white;
@@ -47,52 +43,64 @@
         }
 
         button:hover{
-            background: #f90606;
+            background: #555;
         }
-    </Style>
-  </head>
+    </style>
+</head>
 <body>
- <h1>Latihan JQuery Reyfan</h1>
 
- <div class="Box">
-  Helo Temen-Temen
-</div>
+    <h1>Latihan JQuery Hide / Show / Chaining</h1>
 
-<button id="Hide">Hide</button>
-<button id="Show">Show</button>    
-<button id="Toggle">Toggle</button> 
-<button id="FadeIn">Fade In</button>
-<button id="FadeOut">Fade Out</button> 
-<button id="Slide">Slide </button>
-<button id="Chaining">Chaining</button>  
+    <div class="box">
+        
+        Halo Teman-Teman, Selamat Belajar JQuery
+    </div>
 
-<script>
-    $(document).ready(function(){
-        $("#Hide").click(function(){
-            $(".Box").hide(1000);
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="fade">Fade</button>
+    <button id="slide">Slide</button>
+    <button id="chain">Chaining</button>
+
+    <script>
+
+        // Hide
+        $("#hide").click(function(){
+            $(".box").hide(1000);
         });
-        $("#Show").click(function(){
-            $(".Box").show(1000);
+
+        // Show
+        $("#show").click(function(){
+            $(".box").show(1000);
         });
-        $("#Toggle").click(function(){
-            $(".Box").toggle(1000);
+
+        // Toggle
+        $("#toggle").click(function(){
+            $(".box").toggle(1000);
         });
-        $("#FadeIn").click(function(){
-            $(".Box").fadeIn(1000);
+
+        // Fade
+        $("#fade").click(function(){
+            $(".box").fadeToggle(1000);
         });
-        $("#FadeOut").click(function(){
-            $(".Box").fadeOut(1000);
+
+        // Slide
+        $("#slide").click(function(){
+            $(".box").slideToggle(1000);
         });
-        $("#Slide").click(function(){
-            $(".Box").slideToggle(1000);
+
+        // Chaining
+        $("#chain").click(function(){
+            $(".box")
+                .css("background","green")
+                .slideUp(1000)
+                .slideDown(1000)
+                .fadeOut(1000)
+                .fadeIn(1000);
         });
-        $("#Chaining").click(function(){
-            $(".Box").slideUp(1000).slideDown(1000).fadeOut(1000).fadeIn(1000);
-        });
-    });
+
     </script>
 
-
-</head>
 </body>
 </html>
